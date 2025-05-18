@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace TemplateTPCorto
 {
-    public partial class FormLogin : Form
+    public partial class SistemaLogin : Form
     {
-        public FormLogin()
+        public SistemaLogin()
         {
             InitializeComponent();
         }

@@ -15,8 +15,17 @@ namespace Persistencia
             DataBaseUtils dataBaseUtils = new DataBaseUtils();
             List<String> registros = dataBaseUtils.BuscarRegistro(username);
 
+            // Validar que haya registros antes de acceder
+            if (registros.Count == 0)
+            {
+                throw new Exception("No se encontró ningún registro para el usuario: " + username);
+                // O también podés retornar null si preferís manejarlo desde otra capa:
+                // return null;
+            }
+
             Credencial credencial = new Credencial(registros[0]);
             return credencial;
         }
     }
 }
+
